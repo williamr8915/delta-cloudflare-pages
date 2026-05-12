@@ -1,0 +1,16 @@
+{
+  "name": "Delta Intermediações e Consultoria",
+  "short_name": "Delta",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F4C5C",
+  "theme_color": "#0F4C5C",
+  "icons": [
+    {
+      "src": "/assets/img/logo-delta.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
