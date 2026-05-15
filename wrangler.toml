@@ -7,7 +7,7 @@ TURNSTILE_SITE_KEY = "0x4AAAAAADP9rX4MtOkhgEpl"
 TURNSTILE_EXPECTED_ACTION = "contact"
 TURNSTILE_EXPECTED_HOSTNAME = "deltaintermediacoes.com.br"
 CONTACT_EMAIL = "contato@deltaintermediacoes.com.br"
-FROM_EMAIL = "contato@deltaintermediacoes.com.br"
+FROM_EMAIL = "site@deltaintermediacoes.com.br"
 
 [assets]
 directory = "./public"
