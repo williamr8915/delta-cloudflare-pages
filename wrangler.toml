@@ -2,6 +2,9 @@ name = "delta-cloudflare-pages"
 main = "_worker.js"
 compatibility_date = "2026-05-12"
 
+workers_dev = false
+preview_urls = false
+
 [vars]
 TURNSTILE_SITE_KEY = "0x4AAAAAADP9rX4MtOkhgEpl"
 TURNSTILE_EXPECTED_ACTION = "contact"
