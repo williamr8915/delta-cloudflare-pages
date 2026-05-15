@@ -831,7 +831,50 @@
         }
       }
 
+    
+      .turnstile-shell {
+        margin-top: 18px;
+        padding: 16px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, #F9FBFB 0%, #F3F8F9 100%);
+        border: 1px solid rgba(10,45,54,.10);
+      }
+      .turnstile-label {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--petroleo-deep);
+        font-size: .74rem;
+        font-weight: 800;
+        letter-spacing: .10em;
+        text-transform: uppercase;
+      }
+      .turnstile-help {
+        margin: 10px 0 0;
+        color: rgba(47,52,59,.70);
+        font-size: .82rem;
+        line-height: 1.62;
+      }
+      .turnstile-shell .cf-turnstile {
+        min-height: 68px;
+      }
+      @media (max-width: 720px) {
+        .turnstile-shell {
+          padding: 14px;
+          border-radius: 14px;
+        }
+        .turnstile-label {
+          font-size: .68rem;
+          letter-spacing: .08em;
+        }
+        .turnstile-help {
+          font-size: .77rem;
+          line-height: 1.56;
+        }
+      }
+
     </style>
+  <link rel="preconnect" href="https://challenges.cloudflare.com" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -1146,10 +1189,15 @@
                 <textarea id="mensagem-contato" name="contexto" placeholder="Descreva o ativo, a oportunidade, a demanda ou o cenário que precisa de avaliação." required></textarea>
               </div>
             </div>
+            <div class="turnstile-shell">
+              <span class="turnstile-label">Verificação anti-spam</span>
+              <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="light" data-size="flexible" data-action="contact" data-callback="deltaTurnstileSuccess" data-error-callback="deltaTurnstileError" data-expired-callback="deltaTurnstileExpired"></div>
+              <p class="turnstile-help">Confirme a verificação antes de enviar. O formulário permanece bloqueado até a validação anti-bot ser concluída.</p>
+            </div>
             <div class="form-note">O formulário envia a solicitação diretamente para o e-mail institucional onde um de nossos profissionais, analisará o caso e iniciará o atendimento.</div>
             <div class="form-status" id="form-status" aria-live="polite"></div>
             <div class="hero-actions contact-form-actions">
-              <button class="btn btn-primary" type="submit">Enviar solicitação</button>
+              <button class="btn btn-primary" type="submit" disabled>Enviar solicitação</button>
               <a class="btn btn-outline-dark" href="#contato">Ver contato institucional</a>
             </div>
           </form>
@@ -1273,6 +1321,6 @@
     ]
   }
   </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
