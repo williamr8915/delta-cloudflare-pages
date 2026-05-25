@@ -895,7 +895,495 @@
 
     </style>
   <link rel="preconnect" href="https://challenges.cloudflare.com" />
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
+
+  <style id="delta-elegance-refinements">
+    .topbar {
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 10px 26px rgba(10,23,30,.06);
+    }
+    .nav {
+      width: min(100%, calc(var(--container) + 20px));
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand {
+      gap: 12px;
+      min-width: 0;
+    }
+    .brand-mark {
+      width: 56px;
+      height: 56px;
+      flex-basis: 56px;
+    }
+    .brand-copy {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .brand-copy strong {
+      font-size: .79rem;
+      letter-spacing: .10em;
+      line-height: 1.06;
+    }
+    .brand-copy span {
+      margin-top: 4px;
+      font-size: .57rem;
+      line-height: 1.28;
+      letter-spacing: .05em;
+      max-width: 30ch;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px 10px;
+      min-width: 0;
+    }
+    .nav-links a {
+      min-height: 36px;
+      padding: 0 13px;
+      border-radius: 999px;
+      background: rgba(15,76,92,.04);
+      border: 1px solid rgba(15,76,92,.08);
+      color: rgba(10,45,54,.84);
+      font-size: .65rem;
+      letter-spacing: .07em;
+      transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+    }
+    .nav-links a:hover {
+      background: rgba(15,76,92,.08);
+      border-color: rgba(15,76,92,.14);
+      color: var(--petroleo-deep);
+      transform: translateY(-1px);
+    }
+    .nav-actions {
+      justify-self: end;
+      width: auto;
+      gap: 0;
+    }
+    .nav-actions .btn,
+    .nav-actions .btn-primary {
+      min-height: 41px;
+      padding: 0 15px;
+      border-radius: 12px;
+      font-size: .64rem;
+      letter-spacing: .05em;
+      box-shadow: 0 10px 20px rgba(10,45,54,.12);
+    }
+    .hero {
+      padding: 76px 20px 42px;
+    }
+    .hero-grid {
+      gap: 34px;
+      align-items: start;
+    }
+    .hero-copy {
+      max-width: 620px;
+      padding-top: 2px;
+    }
+    .hero h1,
+    .section-title {
+      text-wrap: balance;
+    }
+    .hero h1 {
+      max-width: 11.5ch;
+      margin: 20px 0 16px;
+      font-size: clamp(3rem, 4.8vw, 5rem);
+      line-height: .95;
+      letter-spacing: -.038em;
+    }
+    .hero-lead {
+      max-width: 60ch;
+      margin-bottom: 24px;
+      font-size: .98rem;
+      line-height: 1.76;
+      color: rgba(255,255,255,.83);
+    }
+    .hero-kicker {
+      padding: 11px 16px;
+      font-size: .72rem;
+      letter-spacing: .11em;
+    }
+    .section-head {
+      max-width: 860px;
+      margin-bottom: 42px;
+    }
+    .section-title {
+      margin: 16px 0 14px;
+      font-size: clamp(2.35rem, 3.7vw, 4rem);
+      line-height: 1.03;
+      letter-spacing: -.032em;
+    }
+    .section-subtitle {
+      max-width: 720px;
+      font-size: .96rem;
+      line-height: 1.78;
+    }
+    .metric-card {
+      padding: 18px;
+      border-radius: 16px;
+    }
+    .metric-card strong {
+      font-size: 1rem;
+    }
+    .metric-card span {
+      font-size: .81rem;
+      line-height: 1.58;
+    }
+    .trust-ribbon {
+      gap: 20px;
+      padding: 30px;
+    }
+    .service-brief {
+      padding: 42px 36px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, #FBFCFC 0%, #FFFFFF 100%);
+      box-shadow: 0 24px 52px rgba(10,23,30,.07);
+    }
+    .brief-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .brief-card {
+      padding: 20px 22px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F7FBFB 100%);
+      border: 1px solid rgba(10,45,54,.08);
+      box-shadow: 0 12px 28px rgba(10,23,30,.04);
+    }
+    .brief-card strong {
+      font-size: .84rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .brief-card span {
+      font-size: .91rem;
+      line-height: 1.6;
+    }
+    .contact-form-shell {
+      margin-top: 30px;
+      padding: 30px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F7FAFB 100%);
+      border: 1px solid rgba(10,45,54,.10);
+      box-shadow: 0 22px 44px rgba(10,23,30,.06);
+    }
+    .contact-form-shell > strong {
+      display: block;
+      color: var(--petroleo-deep);
+      font-size: 1.04rem;
+      letter-spacing: .04em;
+    }
+    .contact-form-shell > p {
+      max-width: 62ch;
+      margin-top: 10px;
+      font-size: .92rem;
+      line-height: 1.7;
+      color: rgba(47,52,59,.78);
+    }
+    .contact-form-grid {
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .form-field {
+      gap: 9px;
+    }
+    .form-field label {
+      color: #0C3A45;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+      border-radius: 16px;
+      border: 1px solid rgba(10,45,54,.12);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FBFDFD 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.86), 0 8px 18px rgba(10,23,30,.03);
+      padding: 16px;
+      color: var(--grafite);
+      transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .form-field input,
+    .form-field select {
+      min-height: 56px;
+    }
+    .form-field textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: rgba(47,52,59,.48);
+    }
+    .form-field input:focus,
+    .form-field textarea:focus,
+    .form-field select:focus {
+      border-color: rgba(15,76,92,.30);
+      box-shadow: 0 0 0 4px rgba(15,76,92,.08), 0 12px 26px rgba(10,23,30,.05);
+      background: #FFFFFF;
+    }
+    .field-hint,
+    .form-note {
+      font-size: .79rem;
+      line-height: 1.6;
+    }
+    .form-note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(15,76,92,.035);
+      border: 1px solid rgba(10,45,54,.08);
+      color: rgba(47,52,59,.72);
+    }
+    .form-status {
+      margin-top: 14px;
+      border-radius: 14px;
+    }
+    .turnstile-shell {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #F9FBFB 0%, #F3F8F9 100%);
+      border: 1px solid rgba(10,45,54,.10);
+    }
+    .turnstile-label {
+      font-size: .68rem;
+      letter-spacing: .1em;
+    }
+    .turnstile-help {
+      font-size: .79rem;
+      line-height: 1.58;
+    }
+    .contact-form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .contact-form-actions .btn {
+      min-width: 190px;
+      min-height: 48px;
+    }
+    .contact-form-actions .btn-outline-dark {
+      background: rgba(255,255,255,.94);
+    }
+
+    @media (max-width: 1180px) {
+      .nav {
+        padding-inline: 18px;
+        gap: 14px;
+      }
+      .hero h1 {
+        font-size: clamp(2.8rem, 4.9vw, 4.3rem);
+      }
+      .section-title {
+        font-size: clamp(2.2rem, 3.8vw, 3.45rem);
+      }
+    }
+
+    @media (max-width: 920px) {
+      .nav {
+        grid-template-columns: minmax(0, 1fr) auto;
+        row-gap: 12px;
+        column-gap: 10px;
+        padding: 12px 16px;
+      }
+      .brand-mark {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+      }
+      .brand-copy strong {
+        font-size: .72rem;
+        letter-spacing: .07em;
+      }
+      .brand-copy span {
+        font-size: .52rem;
+        line-height: 1.24;
+      }
+      .nav-links {
+        grid-column: 1 / -1;
+        order: 3;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 2px 0 4px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+      .nav-links a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+      .nav-actions {
+        justify-self: end;
+      }
+      .hero {
+        padding-top: 52px;
+      }
+      .hero-grid {
+        gap: 26px;
+      }
+      .hero h1 {
+        max-width: none;
+        font-size: clamp(2.5rem, 8vw, 3.7rem);
+      }
+      .hero-lead,
+      .section-subtitle {
+        font-size: .92rem;
+        line-height: 1.68;
+      }
+      .section-title {
+        font-size: clamp(2rem, 6.4vw, 3rem);
+      }
+      .service-brief {
+        padding: 30px 24px;
+      }
+      .brief-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-form-shell {
+        padding: 24px 20px;
+      }
+      .contact-form-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .contact-form-actions .btn {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 720px) {
+      section {
+        padding: 80px 16px;
+      }
+      .nav {
+        padding: 11px 14px;
+      }
+      .brand-mark {
+        width: 44px;
+        height: 44px;
+        flex-basis: 44px;
+      }
+      .brand-copy strong {
+        font-size: .67rem;
+        letter-spacing: .05em;
+      }
+      .brand-copy span {
+        display: none;
+      }
+      .nav-links a {
+        min-height: 32px;
+        padding: 0 11px;
+        font-size: .57rem;
+      }
+      .nav-actions .btn,
+      .nav-actions .btn-primary {
+        min-height: 37px;
+        padding: 0 12px;
+        font-size: .58rem;
+        border-radius: 11px;
+      }
+      .hero {
+        padding-top: 36px;
+      }
+      .hero h1 {
+        font-size: clamp(2.05rem, 10.6vw, 2.9rem);
+        line-height: .97;
+      }
+      .hero-lead {
+        font-size: .88rem;
+        line-height: 1.62;
+        margin-bottom: 20px;
+      }
+      .hero-kicker {
+        font-size: .61rem;
+        padding: 9px 12px;
+      }
+      .section-head {
+        margin-bottom: 30px;
+      }
+      .section-title {
+        font-size: clamp(1.9rem, 8vw, 2.45rem);
+        line-height: 1.06;
+      }
+      .section-subtitle {
+        font-size: .88rem;
+        line-height: 1.64;
+      }
+      .service-brief {
+        padding: 24px 16px;
+        border-radius: 22px;
+      }
+      .brief-card {
+        padding: 18px;
+        border-radius: 16px;
+      }
+      .contact-form-shell {
+        margin-top: 22px;
+        padding: 20px 14px;
+        border-radius: 20px;
+      }
+      .contact-form-shell > strong {
+        font-size: .95rem;
+      }
+      .contact-form-shell > p {
+        font-size: .86rem;
+        line-height: 1.6;
+      }
+      .contact-form-grid {
+        gap: 14px;
+      }
+      .form-field label {
+        font-size: .65rem;
+        letter-spacing: .08em;
+      }
+      .form-field input,
+      .form-field textarea,
+      .form-field select {
+        border-radius: 14px;
+        padding: 14px;
+      }
+      .form-field input,
+      .form-field select {
+        min-height: 50px;
+      }
+      .form-field textarea {
+        min-height: 128px;
+      }
+      .turnstile-shell {
+        padding: 14px;
+        border-radius: 16px;
+      }
+      .turnstile-help,
+      .form-note,
+      .field-hint {
+        font-size: .75rem;
+        line-height: 1.54;
+      }
+    }
+  </style>
+
 </head>
 <body>
   <header class="topbar">
@@ -1520,4 +2008,4 @@
   </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
-</html> 
+</html>
